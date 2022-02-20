@@ -7,7 +7,8 @@
 }
 
 body {
-    height: 100vh;
+    max-height: 100vw;
+    padding-top: 50px;
     display: grid;
     grid-template-rows: 3fr 0.5fr;
     align-items: center;
@@ -21,8 +22,8 @@ body {
     "suvs sedans luxury"
     "attribution attribution attribution";
     justify-items: center;
-    max-width: 850px;
-    max-height: 450px;
+    max-width: 80vw;
+    max-height: 550px;
     width: 70vw;
     height: 75vh;
 }
@@ -40,6 +41,7 @@ body {
     width: 100%;
     height: 100%;
     padding-top: 80px;
+    padding-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,79 +84,34 @@ body {
 
 .title {
     font-family: 'Big Shoulders Display', cursive;
-    font-size: 30px;
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
 .text {
     color: hsla(0, 0%, 100%, 0.75);
-    max-width: 180px;
+    max-width: 300px;
+    width: 15vw;
     margin-top: 30px;
-    font-size: 16px;
-    margin-bottom: 80px;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 
 .button {
     background-color: white;
     border: 2px solid white;
-    padding: 10px;
-    border-left: none;
-    border-right: none;
-    position: absolute;
+    padding: 7px 20px;
+    border-radius: 100vh;
+    margin-top: 40px;
+    font-size: clamp(1rem, 1vw, 2rem);
 }
 
-.circle {
-    display: flex;
-    transform: translateX(18px);
-    margin-bottom: 30px;
-}
-
-.raio-e {
-    display: inline-block;
-    width: 40.8px;
-    height: 40.8px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    transform: translateX(-19px);
-    background-color: white;
-}
-
-.raio-d {
-    display: inline-block;
-    width: 40.8px;
-    height: 40.8px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    transform: translateX(31px);
-    background-color: white;
-}
-
-.circle:hover .bgsedans {
+.button:hover {
     cursor: pointer;
-    background-color: hsl(31, 77%, 52%);
+    background-color: rgba(255, 255, 255, 0);
     color: white;
 }
 
-.circle:hover .bgsuvs {
-    cursor: pointer;
-    background-color: hsl(184, 100%, 22%);
-    color: white;
-}
-
-.circle:hover .bgluxuty {
-    cursor: pointer;
-    background-color: hsl(179, 100%, 13%);
-    color: white;
-}
-
-/* ------- */
-
-.circle:hover .raio-d {
-    cursor: pointer;
-    background-color: hsla(31, 77%, 52%, 0);
-}
-.circle:hover .raio-e {
-    cursor: pointer;
-    background-color: hsla(31, 77%, 52%, 0);
+.attribution a{
+    margin: 2px;
 }
 
 @media (max-width: 890px) {
@@ -178,5 +135,13 @@ body {
 
     .luxury {
         border-radius: 0 0 10px 10px;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .car {
+        padding: 20px;
     }
 }
